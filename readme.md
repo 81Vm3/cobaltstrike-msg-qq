@@ -1,4 +1,4 @@
-# Cobaltstirke 上线 QQ机器人消息推送
+# Cobaltstrike 上线 QQ机器人消息推送
 
 ![](res/1.png)
 
